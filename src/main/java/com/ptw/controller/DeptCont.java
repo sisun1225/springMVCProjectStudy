@@ -17,7 +17,9 @@ public class DeptCont {
 	
 	@RequestMapping("/ptw/deptlist.do")
 	public String deptlist(Model model) {
+
 		model.addAttribute("deptall", service.findALL());
+
 		return "dept/dept_retrieve";
 	}
 	

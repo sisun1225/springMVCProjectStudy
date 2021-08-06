@@ -14,14 +14,18 @@ import com.ptw.model.DeptVO;
 public class DeptServiceImpl implements DeptServiceInterface{
 	//DeptDAOInterface=>구현 class : DeptDAO, DeptDAOMybatis
 	@Autowired   //@autowired는 타입이 같으면 자동으로 di
-	//@Qualifier("deptDAO_mybatis")  //타입이 같은 class가 여러개라면 이름으로 구분
+	@Qualifier("deptDAO_mybatis")  //타입이 같은 class가 여러개라면 이름으로 구분
     DeptDAOInterface deptDAO;
 	
+	//맵퍼 사용안하고 할경우
+	@Autowired
+	DeptDAO deptdao2;
 	
 	@Override
 	public List<DeptVO> findALL() {
 		// TODO Auto-generated method stub
-		return deptDAO.findALL();
+		System.out.println("mybatis이용1");
+		return deptdao2.findALL();
 	}
 
 
