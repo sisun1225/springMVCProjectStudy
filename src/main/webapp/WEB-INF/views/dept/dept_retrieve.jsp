@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,9 +15,20 @@
   td {padding : 5px;}
   tr:first-of-type{background-color: hotpink;}
 </style>
+
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#여기").load("/emp/emplist.do");
+  });
+});
+</script>
+
 </head>
 <body>
+<button>테스트</button>
 
+<div id="여기">
 
 <c:set var="cpath" value="${pageContext.request.contextPath}"/>
 	<form action="${cpath}/emp/selectByDeptmany.do">
@@ -52,7 +64,7 @@
 </table>
 
 
-
+</div>
 	
 	
 	<script>
@@ -60,6 +72,7 @@
 			location.href="deptDelete.do?deptid=" + deptid;
 		}
 	</script>
+
 
 </body>
 </html>
