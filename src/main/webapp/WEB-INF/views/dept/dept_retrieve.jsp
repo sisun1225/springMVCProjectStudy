@@ -3,23 +3,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
   table, td{border: 1px solid black; border-collapse: collapse;}
   td {padding : 5px;}
   tr:first-of-type{background-color: hotpink;}
+  
+  #here{
+  border: 1px solid red;
+  }
 </style>
 
 <script>
 $(document).ready(function(){
   $("button").click(function(){
-    $("#여기").load("/emp/emplist.do");
+    $("#here").load("/ptw/emplist.do");
   });
 });
 </script>
@@ -28,8 +32,9 @@ $(document).ready(function(){
 <body>
 <button>테스트</button>
 
-<div id="여기">
+<div id="here">
 
+<h5>emp 리스트</h5>
 <c:set var="cpath" value="${pageContext.request.contextPath}"/>
 	<form action="${cpath}/emp/selectByDeptmany.do">
 		<select name ="deptlist" multiple="multiple" size="10">
@@ -72,7 +77,5 @@ $(document).ready(function(){
 			location.href="deptDelete.do?deptid=" + deptid;
 		}
 	</script>
-
-
 </body>
 </html>

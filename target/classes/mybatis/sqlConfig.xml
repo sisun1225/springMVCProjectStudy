@@ -12,6 +12,7 @@
 
 	<typeAliases>
 		<typeAlias type="com.ptw.model.DeptVO" alias="dvo"/>
+				<typeAlias type="com.ptw.model.EmpVO" alias="evo"/>
 	</typeAliases>
 
 

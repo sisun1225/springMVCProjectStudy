@@ -26,7 +26,7 @@ public class DeptDAO implements DeptDAOInterface{
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
-	
+	 
 	//jdbc템플릿이라고 하면 아래 모양을 기억해두면된다. 
 	public List<DeptVO> findALL() {
 		List<DeptVO> deptlist = new ArrayList<>();
