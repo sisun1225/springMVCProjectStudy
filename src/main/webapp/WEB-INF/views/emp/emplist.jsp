@@ -15,12 +15,31 @@
 <style>
 table, td{border : 1px solid black;}
 </style>
+
+<script>
+$(document).ready(function(){
+  $("#empbutton").click(function(){
+    $("#here").load("/springtest/emplist.do");
+  });
+  
+  $("#deptbutton").click(function(){
+	    $("#here").load("/springtest/deptlist.do");
+	  });
+  
+});
+</script>
+
+
 </head>
 <body>
 
 <!-- 선택된 페이지에 불러와서 지정된 페이지를 넣어준다.  -->
 <!-- 표준액션 : 컴파일 후에 합친다.  -->
-<%-- <jsp:include page="../common/header.jsp"></jsp:include> --%>
+<jsp:include page="../common/header.jsp"></jsp:include>
+
+<br>
+<button id="empbutton">emplist</button>
+<button id="deptbutton">deptlist</button>
 
 
 <h1>직원목록 로그인정보 : ${loginEmail} </h1>

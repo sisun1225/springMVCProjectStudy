@@ -20,17 +20,13 @@
   }
 </style>
 
-<script>
-$(document).ready(function(){
-  $("button").click(function(){
-    $("#here").load("/ptw/emplist.do");
-  });
-});
-</script>
+
 
 </head>
 <body>
-<button>테스트</button>
+
+<jsp:include page="../common/header.jsp"></jsp:include>
+
 
 <div id="here">
 
@@ -47,8 +43,7 @@ $(document).ready(function(){
 
 
 <h1>부서목록</h1>
-<%-- <jsp:include page="../common/header.jsp"></jsp:include> --%>
-<br>
+
 <!-- <a href="deptInsert.do">신규등록</a> -->
 
 <hr>

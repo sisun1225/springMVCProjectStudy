@@ -15,12 +15,12 @@ public class DeptCont {
 	@Qualifier("deptService")
     DeptServiceImpl service;
 	
-	@RequestMapping("/ptw/deptlist.do")
+	@RequestMapping("/deptlist.do")
 	public String deptlist(Model model) {
 
 		model.addAttribute("deptall", service.findALL());
 
-		return "dept/dept_retrieve";
+		return "dept/deptlist";
 	}
 	
 	
