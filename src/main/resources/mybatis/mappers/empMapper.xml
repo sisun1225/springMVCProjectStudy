@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ptw.emp">   <!-- 우리가 정하는부분 -->
+
+<!-- 다른애만 쓰면된다. -->
+	<resultMap type="evo" id="empResult">
+		<result property="employee_id" column="employee_id"/>
+		<result property="first_name" column="first_name"/>
+	</resultMap>
+  
+	<select id="selectAll" resultMap="empResult">
+	   select * from employees order by 1
+	</select>
+	
+	<select id="selectById" parameterType="int" resultType="evo">
+	   select * from employees where employee_id = #{abc}
+	</select>
+	
+<!-- 	<select id ="selectAllJob" resultType="com.kosta.model.JobVO">
+		select * from jobs order by 1
+	</select> -->
+	
+	<!-- 두개의 조건에 해당되는 값을 가져와라 -->
+	<select id="loginChk" parameterType="map" resultType="evo">  
+		select * from employees
+		where employee_id = #{empid}
+		and email = #{email}
+	</select>
+	
+	<select id="selectByDept"
+		resultType="evo" parameterType="int">
+		select *
+		from employees
+		where department_id= #{aa}
+	</select>
+	
+	<select id="selectBySalary"
+		resultType="evo" parameterType="map">
+		select *
+		from employees
+		where salary between #{min} and #{max}
+	</select>
+	
+	<select id="selectByDate"
+		resultType="evo" parameterType="map">
+		select *
+		from employees
+		where hire_date between #{sdate} and #{edate}
+	</select>
+	
+	<select id="selectByDate2"
+		resultType="evo" parameterType="map">
+		select *
+		from employees
+		where hire_date between #{sdate} and #{edate}
+	</select>
+	
+	<select id="selectByName"
+		resultType="evo" parameterType="string">
+		select *
+		from employees
+		where first_name like #{aa}
+	</select>
+	
+	
+	<delete id="empDelete" parameterType="int">
+		delete from employees where employee_id = #{aa}
+	</delete>
+	
+	<insert id="empInsert" parameterType="evo">
+		insert into employees ( 
+		employee_id, first_name, last_name, email, phone_number,
+		hire_date, job_id, salary, commission_pct, manager_id, department_id
+		)
+		values ( #{employee_id}, #{first_name}, #{last_name}, 
+		#{email}, #{phone_number}, #{hire_date}, #{job_id}, #{salary},
+		 #{commission_pct}, #{manager_id}, #{department_id})
+	</insert>
+	
+		<!-- 예를들어 값을 안주면 null 이 들어오면서 에러가나는데 
+		그럴때 #{phone_number, jdbcType=VARCHAR} 이렇게해주면된다
+		자바는 스트링인데 jdbctype 은 null이 들어오면 매칭이 안되서 에러가 난다 그래서 jdbctype을이용해 타입을 알려준다 준다. 
+		sqlconfig문서에 null처리하도록 셋팅 넣어줘서 jdbcType=VARCHAR 지워도됨
+		 -->
+	
+	<update id="empUpdate" parameterType="evo">
+				update employees set
+			    first_name=#{first_name},  
+			    last_name =#{last_name},
+			    email=#{email},
+			    phone_number=#{phone_number},
+			    hire_date=#{hire_date},
+			    job_id=#{job_id},
+			    salary=#{salary},
+			    commission_pct=#{commission_pct},
+			    manager_id=#{manager_id},
+			    department_id=#{department_id}
+			 where employee_id = #{employee_id}
+	
+	</update>
+	
+	
+	<select id="selectByCondition" resultType="evo" parameterType="map">
+	  select *
+	  from employees
+	  <where>   <!-- test속성에 있는 이름은 map안에 있는 키의 값이다. -->
+	  	<if test="jobid!='' and jobid!=null">
+	  		job_id = #{jobid}
+	  	</if>
+	  	<if test="deptid!=0 and deptid!=null">
+	  		and department_id = #{deptid}
+	  	</if>
+	  	<if test="sal!=0 and sal!=null">
+	  		and salary >= #{sal}
+	  	</if>
+	  	<if test="hdate!=null">
+	  		and hire_date >= #{hdate}
+	  	</if>
+	    </where>
+	    order by employee_id
+	</select>
+	
+	<sql id="empQuery">
+	  select * from employees
+	</sql>
+	
+	<select id="selectByDeptmany" parameterType="java.util.List" resultType="evo">
+		<include refid="empQuery"/>
+		where department_id in
+		<foreach collection="list" index="index" 
+						item="aa" open="(" close=")" separator=",">
+			#{aa}
+			<!--aa는 아무거나 써도된다. -->
+		</foreach>
+		order by employee_id
+	</select>
+	
+</mapper>
