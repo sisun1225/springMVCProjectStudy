@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ptw.business.EmpService;
 import com.ptw.model.EmpVO;
@@ -33,6 +34,11 @@ public class EmpCont {
 		return "emp/empInsert";
 	}
 	
+	@RequestMapping(value = "/empInsert.do", method = RequestMethod.POST)
+	public String empInsertPost(EmpVO emp) {
+		empService.insertEmp(emp);
+		return "redirect:/emplist.do"; //재요청
+	}
 	
 	
 }

@@ -28,8 +28,8 @@ public class EmpDAOMybatis implements EmpDAOInterface{
 	public int insertEmp(EmpVO emp) {
 		System.out.println("empdaomybatis");
 		int result = session.insert(namespace + "empInsert", emp);
-		System.out.println(result);
-		return result; //���� ����� ��Ʈ�ѷ��� �Է��� ����� �Ǿ����� Ȯ�� �� �ٸ� ���� �Ҽ��ִ�.
+		System.out.println("입력" + result);
+		return result; //리턴 해줘야 컨트롤러가 입력이 제대로 되었는지 확인 후 다른 일을 할수있다.
 	}
 	
 }
