@@ -19,8 +19,8 @@
 
 
 
-<a href="http://localhost:9090/springtest/emplist.do">emplist</a>
-<a href="http://localhost:9090/springtest/deptlist.do">deptlist</a>
+<a href="http://localhost:9999/springtest/emplist.do">EMPLIST</a>
+<a href="http://localhost:9999/springtest/deptlist.do">DEPTLIST</a>
 
 <!-- 
 <div class="logininfo">

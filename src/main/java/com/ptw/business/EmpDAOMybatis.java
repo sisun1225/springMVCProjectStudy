@@ -24,4 +24,12 @@ public class EmpDAOMybatis implements EmpDAOInterface{
 		return emplist;
 	}
 
+	@Override
+	public int insertEmp(EmpVO emp) {
+		System.out.println("empdaomybatis");
+		int result = session.insert(namespace + "empInsert", emp);
+		System.out.println(result);
+		return result; //���� ����� ��Ʈ�ѷ��� �Է��� ����� �Ǿ����� Ȯ�� �� �ٸ� ���� �Ҽ��ִ�.
+	}
+	
 }

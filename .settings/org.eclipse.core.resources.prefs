@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/main/java/com/ptw/business/DeptDAO.java=UTF-8
 encoding//src/main/java/com/ptw/business/DeptDAOMybatis.java=UTF-8
+encoding//src/main/java/com/ptw/business/EmpDAOMybatis.java=UTF-8
 encoding//src/main/java/com/ptw/controller/EmpCont.java=UTF-8
 encoding//src/main/java/com/ptw/model/EmpVO.java=UTF-8

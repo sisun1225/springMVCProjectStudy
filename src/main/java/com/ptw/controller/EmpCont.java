@@ -5,10 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ptw.business.EmpService;
+import com.ptw.model.EmpVO;
 
 @Controller
 public class EmpCont {
@@ -23,6 +22,17 @@ public class EmpCont {
 		model.addAttribute("emplist", empService.selectAll());
 		return "emp/emplist";
 	}
+	
+	@RequestMapping("/empInsert.do")
+	public String empInsert() {
+		/*
+		 * model.addAttribute("dlist", deptService.findALL());
+		 * model.addAttribute("mlist", deptService.findALLManager());
+		 * model.addAttribute("jlist", empService.selectAllJobs());
+		 */
+		return "emp/empInsert";
+	}
+	
 	
 	
 }

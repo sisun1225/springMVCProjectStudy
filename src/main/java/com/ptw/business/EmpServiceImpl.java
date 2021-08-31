@@ -21,5 +21,11 @@ public class EmpServiceImpl implements EmpService{
 		return empDAO.selectAll();
 	}
 	
+	@Override
+	public int insertEmp(EmpVO emp) {
+		System.out.println("empservice");
+		return empDAO.insertEmp(emp);
+	}
+	
 
 }
