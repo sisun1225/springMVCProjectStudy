@@ -23,6 +23,6 @@ public class DeptCont {
 		return "dept/deptlist";
 	}
 	
-	
+	 
 	
 }
