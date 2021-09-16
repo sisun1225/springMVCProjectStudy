@@ -40,5 +40,11 @@ public class EmpCont {
 		return "redirect:/emplist.do"; //재요청
 	}
 	
+	@RequestMapping("/empDelete.do")
+	public String empDelete(int empid) {
+		empService.delete(empid);
+	
+		return "redirect:/emplist.do"; 
+	}
 	
 }

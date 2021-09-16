@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h6>서울 가산디지털단지 &copy; 코스타</h6>
+
+<div id="footerwrap">
+<h2>여기는 푸터푸터푸터 &copy; 코스타</h2>
+</div>
+
 </body>
 </html>

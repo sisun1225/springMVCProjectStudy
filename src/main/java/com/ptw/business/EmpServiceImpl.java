@@ -27,5 +27,10 @@ public class EmpServiceImpl implements EmpService{
 		return empDAO.insertEmp(emp);
 	}
 	
+	@Override
+	public int delete(int empid) {
+		// TODO Auto-generated method stub
+		return empDAO.delete(empid);
+	}
 
 }

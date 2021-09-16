@@ -9,6 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
   table, td{border: 1px solid black; border-collapse: collapse;}
@@ -65,6 +66,8 @@
 
 
 </div>
+	
+	<jsp:include page="../common/footer.jsp"></jsp:include>
 	
 	
 	<script>

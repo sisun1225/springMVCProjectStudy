@@ -10,6 +10,7 @@ public interface EmpDAOInterface {
 
 	public List<EmpVO> selectAll() ;
 	public int insertEmp(EmpVO emp) ;
+	public int delete(int empid);
 
 	
 }

@@ -11,9 +11,12 @@
 <head>
 <meta charset="UTF-8">
 <title>emp list</title>
+<%-- <link href="${pageContext.request.contextPath}/static/styles.css" rel="stylesheet" type="text/css"> --%>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
 table, td{border : 1px solid black;}
+
 </style>
 
 <script>
@@ -109,7 +112,7 @@ $(document).ready(function(){
 
 
 
-
+<jsp:include page="../common/footer.jsp"></jsp:include>
 
 <script>
 function call(empid){

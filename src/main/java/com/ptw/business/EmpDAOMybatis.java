@@ -32,4 +32,10 @@ public class EmpDAOMybatis implements EmpDAOInterface{
 		return result; //리턴 해줘야 컨트롤러가 입력이 제대로 되었는지 확인 후 다른 일을 할수있다.
 	}
 	
+	@Override
+	public int delete(int empid) {
+		int result = session.delete(namespace+"empDelete", empid);  
+		System.out.println(result);
+		return result;
+	}
 }
