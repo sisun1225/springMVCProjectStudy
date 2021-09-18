@@ -38,4 +38,20 @@ public class EmpDAOMybatis implements EmpDAOInterface{
 		System.out.println(result);
 		return result;
 	}
+	
+	@Override
+	public int updateEmp(EmpVO emp) {
+		int result = session.update(namespace+"empUpdate", emp);  //emp�� �ѱ�°�
+		System.out.println("마이바티스"+result);
+		return result;
+	}
+	
+	@Override
+	public EmpVO selectById(int empid) {
+		EmpVO emp = session.selectOne(namespace+"selectById", empid);
+		
+		return emp;
+	}
+	
+	
 }

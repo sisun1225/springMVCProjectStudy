@@ -32,5 +32,17 @@ public class EmpServiceImpl implements EmpService{
 		// TODO Auto-generated method stub
 		return empDAO.delete(empid);
 	}
+	
+	@Override
+	public EmpVO selectById(int empid) {
+		// TODO Auto-generated method stub
+		return empDAO.selectById(empid);
+	}
+	
+	@Override
+	public int updateEmp(EmpVO emp) {
+		// TODO Auto-generated method stub
+		return empDAO.updateEmp(emp);
+	}
 
 }

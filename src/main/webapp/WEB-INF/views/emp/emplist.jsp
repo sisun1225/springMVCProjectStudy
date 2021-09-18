@@ -15,7 +15,9 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
-table, td{border : 1px solid black;}
+table, td, tr{
+border : 1px solid black;
+}
 
 </style>
 

@@ -11,6 +11,7 @@ public interface EmpDAOInterface {
 	public List<EmpVO> selectAll() ;
 	public int insertEmp(EmpVO emp) ;
 	public int delete(int empid);
-
+	public int updateEmp(EmpVO emp) ;
+	public EmpVO selectById(int empid);
 	
 }

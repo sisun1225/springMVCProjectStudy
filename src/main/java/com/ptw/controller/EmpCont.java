@@ -47,4 +47,20 @@ public class EmpCont {
 		return "redirect:/emplist.do"; 
 	}
 	
+	
+	@RequestMapping("/empDetail.do")
+	public String empDetail(Model model, int empid) {
+		model.addAttribute("emp", empService.selectById(empid));
+	
+		return "emp/empdetail"; //forward
+	}
+	
+	
+	@RequestMapping(value = "/empDetail.do", method=RequestMethod.POST)
+	public String empDetailPost(EmpVO emp) {
+		int result = empService.updateEmp(emp);
+		System.out.println("성공"+result);
+		return "redirect:/emplist.do"; 
+	}
+	
 }

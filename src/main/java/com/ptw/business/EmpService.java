@@ -12,4 +12,6 @@ public interface EmpService {
 	public List<EmpVO> selectAll() ;
 	public int insertEmp(EmpVO emp) ;
 	public int delete(int empid) ;
+	public EmpVO selectById(int empid);
+	public int updateEmp(EmpVO emp) ;
 }

@@ -19,10 +19,11 @@
 
 <div id="headerwrap">
 
+<h1>여기는 헤더</h1>
 
 
-<a href="http://localhost:9999/springtest/emplist.do">EMPLIST</a>
-<a href="http://localhost:9999/springtest/deptlist.do">DEPTLIST</a>
+<a href="http://localhost:9999/springtest/emplist.do"><h1>EMPLIST</a>
+<a href="http://localhost:9999/springtest/deptlist.do">DEPTLIST</h1></a>
 
 <!-- 
 <div class="logininfo">
@@ -53,8 +54,7 @@
 	</div>
 	 -->
 
-<p>여기는 헤더</p>
-<hr>
+
 
 </div>
 </body>
