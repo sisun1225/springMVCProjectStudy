@@ -9,6 +9,8 @@ import com.ptw.model.DeptVO;
 public interface DeptServiceInterface {
 
 	public List<DeptVO> findALL();
+	public int update(DeptVO dept);
+	public DeptVO findById(int deptid);
 
 	
 }

@@ -23,4 +23,17 @@ public class DeptDAOMybatis implements DeptDAOInterface {
 		return sqlsession.selectList(namespace + "selectAll");
 	}
 
+	
+	@Override
+	public int update(DeptVO dept) {
+		// TODO Auto-generated method stub
+		return sqlsession.update(namespace + "update",dept);
+	}
+	
+	@Override
+	public DeptVO findById(int deptid) {
+		// TODO Auto-generated method stub
+		return sqlsession.selectOne(namespace + "selectById",deptid);
+	}
+	
 }

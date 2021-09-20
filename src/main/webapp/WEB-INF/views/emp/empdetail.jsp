@@ -18,15 +18,12 @@ employee_id : <input type="number" name="employee_id" value="${emp.employee_id}"
 First_name : <input type="text" name="first_name" value="${emp.first_name}"><br>
 Last_name : <input type="text" name="last_name" value="${emp.last_name}"><br>
 Email : <input type="text" name="email" value="${emp.email}"><br>
-Phone_number : <input type="text" name="phone_number" value="${emp.phone_number}">
-<img src="/websShop/upload/${emp.phone_number}">
-<br>
+Phone_number : <input type="text" name="phone_number" value="${emp.phone_number}"><br>
 Hire_date : <input type="text" name="hire_date" value="${emp.hire_date}"><br>
 Job_id : <input type="text" name="job_id" value="${emp.job_id}"><br>
 Salary : <input type="number" name="salary" value="${emp.salary}"><br>
 Commission_pct : <input type="text" name="commission_pct" value="${emp.commission_pct}"><br>
 Manager_id : <input type="number" name="manager_id" value="${emp.manager_id}"><br>
-
 Department_id : <input type="number" name="department_id" value="${emp.department_id}"><br>
 
 <input type= "submit" value="수정하기">

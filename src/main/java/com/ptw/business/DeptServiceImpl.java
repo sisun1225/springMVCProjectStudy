@@ -18,14 +18,25 @@ public class DeptServiceImpl implements DeptServiceInterface{
     DeptDAOInterface deptDAO;
 	
 	//맵퍼 사용안하고 할경우
-	@Autowired
-	DeptDAO deptdao2;
+	//@Autowired
+	//DeptDAO deptdao2;
 	
 	@Override
 	public List<DeptVO> findALL() {
 		// TODO Auto-generated method stub
 		System.out.println("mybatis이용1");
-		return deptdao2.findALL();
+		return deptDAO.findALL();
+	}
+	
+	@Override
+	public int update(DeptVO dept) {
+		// TODO Auto-generated method stub
+		return deptDAO.update(dept);
+	}
+	@Override
+	public DeptVO findById(int deptid) {
+		// TODO Auto-generated method stub
+		return deptDAO.findById(deptid);
 	}
 
 

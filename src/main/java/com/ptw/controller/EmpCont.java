@@ -58,6 +58,7 @@ public class EmpCont {
 	
 	@RequestMapping(value = "/empDetail.do", method=RequestMethod.POST)
 	public String empDetailPost(EmpVO emp) {
+		System.out.println("컨트롤러 업데이트"+emp);
 		int result = empService.updateEmp(emp);
 		System.out.println("성공"+result);
 		return "redirect:/emplist.do"; 
